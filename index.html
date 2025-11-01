@@ -15,7 +15,7 @@
       --glass: rgba(255,255,255,0.04);
     }
     *{box-sizing:border-box}
-   html,body{height:100%}
+    html,body{height:100%}
     body{
       margin:0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -25,7 +25,7 @@
       -moz-osx-font-smoothing:grayscale;
     }
     .container{max-width:1100px;margin:36px auto;padding:20px}
-    .card{background:var(--card;border-radius:14px;padding:20px;display:flex;gap:18px;align-items:flex-start}
+    .card{background:var(--card);border-radius:14px;padding:20px;display:flex;gap:18px;align-items:flex-start}
     .left{flex:1}
     .right{width:320px;text-align:center}
     .logo{width:96px;height:96px;border-radius:12px;object-fit:cover;display:block}
@@ -34,7 +34,7 @@
     .controls{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
     .btn{
       background:linear-gradient(180deg,var(--accent),#5f2de6);
-      color:#fff;padding:10px 14px;border-radius:10px;border:0;fon-weight:700;cursor:pointer;
+      color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer;
       box-shadow:0 6px 18px rgba(0,0,0,0.35)
     }
     .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);font-weight:600}
@@ -42,7 +42,7 @@
     .small{font-size:13px;color:var(--muted)}
     .log{margin-top:12px;padding:12px;background:var(--glass);border-radius:8px;color:#e6e3ee;font-family:monospace;font-size:13px;max-height:220px;overflow:auto}
     .socials{display:flex;gap:8px;margin-top:14px}
-    .socialsa{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none}
     .priceBox{margin-top:14px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
     a.inline{color:var(--accent);text-decoration:none}
     footer{margin-top:18px;color:var(--muted);font-size:13px}
@@ -53,7 +53,7 @@
   </style>
 </head>
 <body>
-  <div class"container">
+  <div class="container">
     <div class="card" role="main">
       <div class="left">
         <div style="display:flex;gap:14px;align-items:center">
@@ -64,7 +64,7 @@
           </div>
         </div>
 
-        <div class="controls" style="align-items:ceter">
+        <div class="controls" style="align-items:center">
           <button id="connectBtn" class="btn ghost">Connect Wallet</button>
           <button id="mintBtn" class="btn">Mint Now</button>
           <button id="mintRelayerBtn" class="btn ghost">Mint via Relayer</button>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="priceBox" id="priceBox">
-          <div class="small">Price: <strong id="mintPrice">—</strong> • Status: <span id="mintStats">checking…</span></div>
+          <div class="small">Price: <strong id="mintPrice">—</strong> • Status: <span id="mintStatus">checking…</span></div>
           <div class="small">Max per wallet: <span id="maxPerWallet">—</span></div>
         </div>
 
@@ -81,15 +81,15 @@
         <div class="log" id="log" aria-live="polite"></div>
 
         <div class="socials" style="margin-top:10px">
-          <a id="twitterLink" href="https://x.com/farcasterpunks" target="_blank" title="Twitter (X)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0ff" stroke-width="1.2"><path d="M2 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12 8.09v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5A4.5 4.5 0 0 0 23 3z"></path></svg></a>
+          <a id="twitterLink" href="https://x.com/farcasterpunks" target="_blank" title="Twitter (X)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0ff" stroke-width="1.2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12 8.09v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5A4.5 4.5 0 0 0 23 3z"></path></svg></a>
           <a id="farcasterLink" href="https://warpcast.com" target="_blank" title="Farcaster (Warpcast)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0ff" stroke-width="1.2"><path d="M12 2L19 8v8l-7 6-7-6V8l7-6z"></path></svg></a>
-          <a id="openSeaLink" href="#" target="_blank" title="OpenSea"><svg width="18"height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0ff" stroke-width="1.2"><path d="M3 3h18v18H3z"></path></svg></a>
+          <a id="openSeaLink" href="#" target="_blank" title="OpenSea"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0ff" stroke-width="1.2"><path d="M3 3h18v18H3z"></path></svg></a>
           <a id="magicLink" href="https://magiceden.io" target="_blank" title="Magic Eden"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9aa0ff" stroke-width="1.2"><circle cx="12" cy="12" r="9"></circle></svg></a>
         </div>
 
         <footer>
           <div>Contract: <a id="contractLink" class="inline" href="#" target="_blank"></a></div>
-          <div styl="margin-top:6px">Open in Warpcast to mint in-app (frame uses postUrl in manifest).</div>
+          <div style="margin-top:6px">Open in Warpcast to mint in-app (frame uses postUrl in manifest).</div>
         </footer>
       </div>
 
@@ -103,6 +103,7 @@
   <!-- Ethers v6 (ESM) -->
   <script type="module">
     import { ethers } from 'https://cdn.jsdelivr.net/npm/ethers@6.9.0/dist/ethers.esm.min.js';
+
     /***********************
      * CONFIG - edit these *
      ***********************/
@@ -112,7 +113,7 @@
       POST_URL: '/api/mint', // endpoint for relayer (must match manifest .well-known/postUrl)
       OPENSEA_URL: 'https://opensea.io/collection/farcaster-punks-59466883/overview',
       BASESCAN_TX_PREFIX: 'https://basescan.org/tx/',
-      BASESCAN_ADDRESS_PREFI: 'https://basescan.org/address/'
+      BASESCAN_ADDRESS_PREFIX: 'https://basescan.org/address/'
     };
     /************************/
 
@@ -124,7 +125,7 @@
     const logEl = document.getElementById('log');
     const hintEl = document.getElementById('hint');
     const mintPriceEl = document.getElementById('mintPrice');
-    cost mintStatusEl = document.getElementById('mintStatus');
+    const mintStatusEl = document.getElementById('mintStatus');
     const maxPerWalletEl = document.getElementById('maxPerWallet');
     const contractLinkEl = document.getElementById('contractLink');
     const openSeaLink = document.getElementById('openSeaLink');
@@ -136,7 +137,7 @@
     openSeaLink.href = CONFIG.OPENSEA_URL;
 
     // State
-   let provider = null;
+    let provider = null;
     let signer = null;
 
     function inWarpcast() {
@@ -155,14 +156,14 @@
       return s.replaceAll('<','&lt;').replaceAll('>','&gt;');
     }
 
-    asyc function readPublicDrop() {
+    async function readPublicDrop() {
       try {
         const providerRead = new ethers.JsonRpcProvider('https://mainnet.base.org'); // public Base RPC; change if needed
         const read = new ethers.Contract(CONFIG.SEADROP_ADDRESS, [
           "function getPublicDrop(address nftContract) view returns (uint80 mintPrice, uint48 startTime, uint48 endTime, uint16 maxTotalMintableByWallet, uint16 feeBps, bool restrictFeeRecipients)"
         ], providerRead);
 
-        const pub = await read.getPublicDrop(CONFIG.FT_CONTRACT);
+        const pub = await read.getPublicDrop(CONFIG.NFT_CONTRACT);
         const mintPrice = BigInt(pub[0].toString ? pub[0].toString() : pub[0]);
         const start = Number(pub[1]);
         const end = Number(pub[2]);
@@ -173,7 +174,7 @@
         const now = Math.floor(Date.now() / 1000);
         const status = (start <= now && now <= end) ? 'Active' : (now < start ? 'Not started' : 'Ended');
 
-        const mintEth = Number(ethers.formatUnits(mintPrice, 'ther'));
+        const mintEth = Number(ethers.formatUnits(mintPrice, 'ether'));
         mintPriceEl.textContent = mintEth + ' ETH';
         mintStatusEl.textContent = status + (restrict ? ' • fee recipients restricted' : '');
         maxPerWalletEl.textContent = maxPer;
@@ -181,7 +182,7 @@
         appendLog(`Public drop read: price=${mintEth} ETH start=${new Date(start*1000).toISOString()} end=${new Date(end*1000).toISOString()} maxPer=${maxPer}`);
         return { mintPrice, start, end, maxPer, restrict };
       } catch (err) {
-        appendLog('Failed to read publicDrop: ' + (err?.message|| err));
+        appendLog('Failed to read publicDrop: ' + (err?.message || err));
         mintPriceEl.textContent = '—';
         mintStatusEl.textContent = 'unknown';
         maxPerWalletEl.textContent = '—';
@@ -195,7 +196,7 @@
         provider = new ethers.BrowserProvider(window.ethereum);
         connectBtn.style.display = 'inline-block';
         appendLog('Wallet provider detected in browser.');
-        hintEl.textContent = 'Wallet provideravailable — you can connect and sign transactions in browser. Or open this page inside Warpcast to mint without wallet.';
+        hintEl.textContent = 'Wallet provider available — you can connect and sign transactions in browser. Or open this page inside Warpcast to mint without wallet.';
       } else {
         provider = null;
         connectBtn.style.display = 'none';
@@ -206,7 +207,7 @@
         }
       }
 
-     // show initial public drop status
+      // show initial public drop status
       await readPublicDrop();
     }
 
@@ -221,7 +222,7 @@
         signer = await provider.getSigner();
         const addr = await signer.getAddress();
         appendLog('Connected wallet: ' + addr);
-        hintEl.textContent = 'Connected: ' + adr;
+        hintEl.textContent = 'Connected: ' + addr;
       } catch (err) {
         appendLog('Connect error: ' + (err?.message || err));
       }
@@ -234,14 +235,15 @@
         try {
           appendLog('Preparing user-signed mint (wallet).');
           const read = new ethers.Contract(CONFIG.SEADROP_ADDRESS, [
-            "function getPublicDrop(address nftContract) view returns (uint80,uint48,uint48,uint16,uint16,bool)",            "function getAllowedFeeRecipients(address nftContract) view returns (address[])",
+            "function getPublicDrop(address nftContract) view returns (uint80,uint48,uint48,uint16,uint16,bool)",
+            "function getAllowedFeeRecipients(address nftContract) view returns (address[])",
             "function getFeeRecipients(address nftContract) view returns (address[])",
             "function mintPublic(address nftContract, address feeRecipient, address minterIfNotPayer, uint256 quantity) external payable"
           ], provider);
 
           const pub = await read.getPublicDrop(CONFIG.NFT_CONTRACT);
           const mintPrice = BigInt(pub[0].toString ? pub[0].toString() : pub[0]);
-          cons restrict = Boolean(pub[5]);
+          const restrict = Boolean(pub[5]);
           let feeRecipient = ethers.ZeroAddress;
           if (restrict) {
             try {
@@ -251,7 +253,7 @@
             } catch(e) { feeRecipient = ethers.ZeroAddress; }
           }
 
-          const userSigner = rovider.getSigner();
+          const userSigner = provider.getSigner();
           const seadropWithSigner = new ethers.Contract(CONFIG.SEADROP_ADDRESS, [
             "function mintPublic(address nftContract, address feeRecipient, address minterIfNotPayer, uint256 quantity) external payable"
           ], userSigner);
@@ -259,7 +261,7 @@
           const userAddress = await userSigner.getAddress();
           const qty = 1;
           appendLog('Calling mintPublic from wallet — price: ' + ethers.formatUnits(mintPrice, 'ether') + ' ETH');
-          const tx = await seadropWithSiner.mintPublic(CONFIG.NFT_CONTRACT, feeRecipient, userAddress, qty, { value: mintPrice * BigInt(qty) });
+          const tx = await seadropWithSigner.mintPublic(CONFIG.NFT_CONTRACT, feeRecipient, userAddress, qty, { value: mintPrice * BigInt(qty) });
           appendLog('User tx sent: ' + tx.hash + ' — waiting 1 confirmation...');
           await tx.wait(1);
           appendLog('User mint confirmed: ' + tx.hash);
@@ -268,7 +270,7 @@
           appendLog('User mint failed: ' + (err?.message || err));
           alert('Mint failed: ' + (err?.message || err));
         }
-        eturn;
+        return;
       }
 
       // if no signer, fallback guidance (likely warpcast)
@@ -280,7 +282,7 @@
 
       // if no wallet and not warpcast, offer relayer test
       appendLog('No wallet detected. Use "Mint via Relayer" to call /api/mint (server relayer must be configured).');
-      aler('No wallet — use "Mint via Relayer" if server relayer is configured.');
+      alert('No wallet — use "Mint via Relayer" if server relayer is configured.');
     });
 
     // Mint via relayer (server) — direct button for testing (calls POST /api/mint)
@@ -288,7 +290,7 @@
       try {
         appendLog('Calling relayer POST ' + CONFIG.POST_URL);
         // Example body — in Warpcast, the body will include minter as caller; here we ask for user address if connected
-        const minter = signer ? await signer.getAddress() : '0x000000000000000000000000000000000000000';
+        const minter = signer ? await signer.getAddress() : '0x0000000000000000000000000000000000000000';
         const body = { minter, quantity: 1 };
         const res = await fetch(CONFIG.POST_URL, {
           method: 'POST',
@@ -300,7 +302,7 @@
           appendLog('Relayer error: ' + JSON.stringify(j));
           alert('Relayer error: ' + (j?.error || JSON.stringify(j)));
         } else {
-          appendLog('Relayer response: ' + JSON.stringiy(j));
+          appendLog('Relayer response: ' + JSON.stringify(j));
           if (j.txHash) {
             window.open(CONFIG.BASESCAN_TX_PREFIX + j.txHash, '_blank');
           }
